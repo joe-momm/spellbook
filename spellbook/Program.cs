@@ -28,7 +28,10 @@ namespace spellbook
 
                 if (input == "1")
                 {
-
+                    spell kouzlo = new spell();
+                    kouzlo.name = pomocneMetody.vygenerujSpellName(poleForma,poleTypy);
+                    kouzlo.manaCost = pomocneMetody.vygenerujCislo(100);
+                    seznamSpellu.Add(kouzlo);
                 }
                 else if (input == "2")
                 {

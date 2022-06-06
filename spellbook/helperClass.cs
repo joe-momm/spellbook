@@ -15,6 +15,8 @@ namespace spellbook
         {
             string adresaTxtSouboru = "spelly/spelly.txt";
             string obsahTXT = File.ReadAllText(adresaTxtSouboru);
+            string[] oddeleny = obsahTXT.Split(";") ;
+            return oddeleny;
         }
         public string vygenerujSpellName (string[] poleForma, string[] poleTypy) 
         {
