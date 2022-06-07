@@ -9,22 +9,25 @@ namespace spellbook
     class helperClass
     {
         public Random generator = new Random();
-        public int vyberCislo = Convert.ToInt32(Console.ReadLine());
 
-        public string[] PoleZTextu (string adresaSoubru)
+        public string[] PoleZTextu (string adresaSouboru)
         {
-            string adresaTxtSouboru = "spelly/spelly.txt";
-            string obsahTXT = File.ReadAllText(adresaTxtSouboru);
+            string obsahTXT = File.ReadAllText(adresaSouboru);
             string[] oddeleny = obsahTXT.Split(";") ;
             return oddeleny;
         }
         public string vygenerujSpellName (string[] poleForma, string[] poleTypy) 
         {
-            
+            string spellName = "";
+            string forma = poleForma[vygenerujCislo(poleForma.Length - 1)];
+            string typ = poleTypy[vygenerujCislo(poleTypy.Length - 1)];
+            spellName = typ + " " + forma;
+            return spellName;
         }
         public int vygenerujCislo (int max)
         {
-            int generaceCisla = generator.Next(0, vyberCislo);
+            int generaceCisla = generator.Next(0, max);
+            return generaceCisla;
         }
     }
 }
